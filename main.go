@@ -87,3 +87,31 @@ package main
 // 		file.Close()
 // 	}
 // }
+
+// Prints the bytes and length of bytes in a file or files
+
+// import (
+// 	"fmt"
+// 	"io"
+// 	"os"
+// )
+
+// func main() {
+// 	for _, fname := range os.Args[1:] {
+// 		file, err := os.Open(fname)
+
+// 		if err != nil {
+// 			fmt.Fprintln(os.Stderr, err)
+// 			continue
+// 		}
+
+// 		data, err := io.ReadAll(file)
+
+// 		if err != nil {
+// 			fmt.Fprintln(os.Stderr, err)
+// 			continue
+// 		}
+// 		fmt.Println("The file", fname, "has", data)
+// 		fmt.Println("The file", fname, "has", len(data), "bytes")
+// 	}
+// }
