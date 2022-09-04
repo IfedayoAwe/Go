@@ -115,3 +115,48 @@ package main
 // 		fmt.Println("The file", fname, "has", len(data), "bytes")
 // 	}
 // }
+
+// Print the number of lines, words, characters and filename of a file or an array of files and their respective totals
+// import (
+// 	"bufio"
+// 	"fmt"
+// 	"os"
+// 	"strings"
+// )
+
+// func main() {
+// 	var tl, tw, tc int
+// 	farray := os.Args[1:]
+// 	for _, fname := range farray {
+// 		file, err := os.Open(fname)
+// 		var lc, wc, cc int
+
+// 		if err != nil {
+// 			fmt.Fprintln(os.Stderr, err)
+// 			continue
+// 		}
+
+// 		scan := bufio.NewScanner(file)
+
+// 		for scan.Scan() {
+// 			lc++
+// 			s := scan.Text()
+// 			wc += len(strings.Fields(s))
+// 			cc += len(s)
+
+// 		}
+
+// 		tl += lc
+// 		tw += wc
+// 		tc += cc
+
+// 		fmt.Printf("lines: %d, words: %d, characters: %d, filename: %s\n", lc, wc, cc, fname)
+// 		file.Close()
+
+// 	}
+
+// 	if len(farray) > 1 {
+// 		fmt.Printf("totallines: %d, totalwords: %d, totalchar: %d", tl, tw, tc)
+// 	}
+
+// }
