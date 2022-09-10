@@ -199,7 +199,7 @@ package main
 // 	}
 // }
 
-// Count words and images retured from a html document
+// Count words and images in a html document
 // import (
 // 	"bytes"
 // 	"fmt"
@@ -252,4 +252,21 @@ package main
 // 	words, pics := countWordsAndImages(doc)
 
 // 	fmt.Printf("%d words and %d images\n", words, pics)
+// }
+
+// solving the problem of arrays in loops
+// import "fmt"
+
+// func main() {
+// 	items := [][2]byte{{1, 2}, {3, 4}, {5, 6}}
+// 	a := [][]byte{}
+
+// 	for _, item := range items {
+// 		ar := make([]byte, len(item))
+// 		copy(ar, item[:])
+// 		a = append(a, ar)
+// 		fmt.Println(a)
+// 	}
+// 	fmt.Println(items)
+// 	fmt.Println(a)
 // }
