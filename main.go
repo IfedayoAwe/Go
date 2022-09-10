@@ -270,3 +270,49 @@ package main
 // 	fmt.Println(items)
 // 	fmt.Println(a)
 // }
+
+// import (
+// 	"fmt"
+// 	"log"
+// 	"net/http"
+// )
+
+// func handler(w http.ResponseWriter, r *http.Request) {
+// 	fmt.Fprintf(w, "Hello, world! from %s\n", r.URL.Path[1:])
+// }
+
+// func main() {
+// 	http.HandleFunc("/", handler)
+// 	log.Fatal(http.ListenAndServe(":8080", nil))
+
+// }
+
+// Get response from the url above
+// import (
+// 	"fmt"
+// 	"io"
+// 	"net/http"
+// 	"os"
+// )
+
+// func main() {
+// 	resp, err := http.Get("http://localhost:8080/" + os.Args[1])
+
+// 	if err != nil {
+// 		fmt.Fprintln(os.Stderr, err)
+// 		os.Exit(-1)
+// 	}
+
+// 	defer resp.Body.Close()
+
+// 	if resp.StatusCode == http.StatusOK {
+// 		body, err := io.ReadAll(resp.Body)
+
+// 		if err != nil {
+// 			fmt.Fprintln(os.Stderr, err)
+// 			os.Exit(-1)
+// 		}
+
+// 		fmt.Println(string(body))
+// 	}
+// }
