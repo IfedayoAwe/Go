@@ -161,6 +161,7 @@ package main
 
 // }
 
+// fibonanci number to explain closures
 // import (
 // 	"fmt"
 // )
@@ -199,7 +200,7 @@ package main
 // 	}
 // }
 
-// Count words and images in a html document
+// Count words and images in a html document #working with trees in go
 // import (
 // 	"bytes"
 // 	"fmt"
@@ -271,6 +272,7 @@ package main
 // 	fmt.Println(a)
 // }
 
+// run server and return response hello world and any argument after (/) to browser
 // import (
 // 	"fmt"
 // 	"log"
