@@ -1,5 +1,6 @@
 package main
 
+// Polymorphism in go
 import (
 	"fmt"
 	"math"
