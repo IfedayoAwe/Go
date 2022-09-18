@@ -27,7 +27,18 @@ func (p Path) Distance() (sum float64) {
 	return sum
 }
 
+type Distancer interface {
+	Distance() float64
+}
+
+func PrintDistance(d Distancer) {
+	fmt.Println(d.Distance())
+}
+
 func main() {
-	fmt.Println(Line{Point{1, 2}, Point{4, 6}}.Distance())
-	fmt.Println(Path{{1, 1}, {5, 1}, {5, 4}, {1, 1}}.Distance())
+	side := Line{Point{1, 2}, Point{4, 6}}
+	perimeter := Path{{1, 1}, {5, 1}, {5, 4}, {1, 1}}
+
+	PrintDistance(side)
+	PrintDistance(perimeter)
 }
