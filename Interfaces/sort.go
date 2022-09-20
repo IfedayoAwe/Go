@@ -48,11 +48,20 @@ package main
 // 	s := Organs{{"brain", 1340}, {"liver", 1494}, {"spleen", 162}, {"pancreas", 131}, {"heart", 290}}
 // 	fmt.Println("len:", len(s))
 
+// 	// better recomended way
 // 	fmt.Println("original:", s)
 // 	for i := 1; i < s.Len(); i++ {
 // 		s.Swap(i-1, i)
 // 	}
 // 	fmt.Println("after swap:", s)
+
+// 	// not recomended way
+// 	for i := range s {
+// 		if i <= len(s)-2 {
+// 			s.Swap(i, i+1)
+// 		}
+// 	}
+// 	fmt.Println("new swap:", s)
 
 // 	sort.Sort(ByName{s})
 // 	fmt.Println("ByName:", s)
