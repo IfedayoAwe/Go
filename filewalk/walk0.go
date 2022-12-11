@@ -1,5 +1,7 @@
 package main
 
+// This is the sequential method; A program that takes a dir as a commandline argument and returns the names of duplicatefiles by hashes
+
 // import (
 // 	"crypto/md5"
 // 	"fmt"
