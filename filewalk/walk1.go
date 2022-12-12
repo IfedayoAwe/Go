@@ -1,6 +1,6 @@
 package main
 
-// This is a concurrent method using unbuffered channels (pairs)
+// This is a concurrent method, can make this program faster by buffering pairs or more workers
 
 // import (
 // 	"crypto/md5"
