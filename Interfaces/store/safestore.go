@@ -53,7 +53,7 @@ func (db *database) create(w http.ResponseWriter, req *http.Request) {
 	price := req.URL.Query().Get("price")
 
 	if _, ok := db.data[item]; ok {
-		w.WriteHeader(http.StatusBadRequest) // 404
+		w.WriteHeader(http.StatusBadRequest) // 400
 
 		fmt.Fprintf(w, "duplicate item: %q\n", item)
 		return
