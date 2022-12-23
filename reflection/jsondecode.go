@@ -49,13 +49,13 @@ func (r *respWrapper) UnmarshalJSON(b []byte) (err error) {
 		}
 
 	case "song":
-		inner, ok := raw["song"].(map[string]interface{})
+		song, ok := raw["song"].(map[string]interface{})
 
 		if ok {
-			if title, ok := inner["title"].(string); ok {
+			if title, ok := song["title"].(string); ok {
 				r.Title = title
 			}
-			if artist, ok := inner["artist"].(string); ok {
+			if artist, ok := song["artist"].(string); ok {
 				r.Artist = artist
 			}
 		}
