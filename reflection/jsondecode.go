@@ -8,7 +8,7 @@ import (
 
 type response struct {
 	Item   string `json:"item"`
-	Ablum  string
+	Album  string
 	Title  string
 	Artist string
 }
@@ -19,7 +19,7 @@ type respWrapper struct {
 
 var j1 = `{
 	"item": "album",
-	"album": {"title": "Dark Side of the Moon"}
+	"album": {"title": "A Trip on Trips", "artist": "Lyrx"}
 }`
 
 var j2 = `{
@@ -35,12 +35,17 @@ func (r *respWrapper) UnmarshalJSON(b []byte) (err error) {
 
 	switch r.Item {
 	case "album":
-		inner, ok := raw["album"].(map[string]interface{})
+		album, ok := raw["album"].(map[string]interface{})
 
 		if ok {
-			if album, ok := inner["title"].(string); ok {
-				r.Ablum = album
+			if title, ok := album["title"].(string); ok {
+				r.Title, r.Album = title, title
 			}
+
+			if artist, ok := album["artist"].(string); ok {
+				r.Artist = artist
+			}
+
 		}
 
 	case "song":
