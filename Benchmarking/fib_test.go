@@ -12,6 +12,7 @@ func Fib(n int, r bool) int {
 		return 1
 
 	default:
+		// Fibonacci done with recursion is very inefficient
 		if r {
 			return Fib(n-1, true) + Fib(n-2, true)
 		}
