@@ -1,6 +1,6 @@
 package main
 
-// making or summing a slice is more efficient than making or summing the linked list
+//making or summing a slice is more efficient than making or summing the linked list
 
 import "testing"
 
