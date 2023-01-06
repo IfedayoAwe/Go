@@ -64,19 +64,20 @@ func (r *respWrapper) UnmarshalJSON(b []byte) (err error) {
 	return err
 }
 
-func main() {
-	var resp1, resp2 respWrapper
+func Decode(st string) error {
+	var resp1 respWrapper
 	var err error
 
-	if err = json.Unmarshal([]byte(j1), &resp1); err != nil {
+	if err = json.Unmarshal([]byte(st), &resp1); err != nil {
 		log.Fatal(err)
 	}
 
 	fmt.Printf("%#v\n", resp1.response)
 
-	if err = json.Unmarshal([]byte(j2), &resp2); err != nil {
-		log.Fatal(err)
-	}
+	return err
+}
 
-	fmt.Printf("%#v\n", resp2.response)
+func main() {
+	Decode(j1)
+	Decode(j2)
 }
