@@ -1,5 +1,11 @@
 package main
 
+import (
+	"fmt"
+	"regexp"
+	"strings"
+)
+
 // import (
 // 	"fmt"
 // 	"regexp"
@@ -18,3 +24,11 @@ package main
 // 		fmt.Println(te[d[0]:d[1]])
 // 	}
 // }
+
+func main() {
+	te := "aba abba abbbxa"
+	re := regexp.MustCompile("ab+a")
+	up := re.ReplaceAllStringFunc(te, strings.ToUpper)
+
+	fmt.Println(up)
+}
