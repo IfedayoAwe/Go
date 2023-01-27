@@ -88,6 +88,7 @@ type Header struct {
 func DecodeHeader(b []byte) (*Header, []byte, error) {
 	var err error
 	var pos int
+	var val int
 
 	header := Header{TotalLength: uint32(len(b))}
 	buf := bytes.NewReader(b)
@@ -97,7 +98,7 @@ func DecodeHeader(b []byte) (*Header, []byte, error) {
 	}
 
 	if err = binary.Read(buf, binary.BigEndian, &header); err != nil {
-		return &header, nil, HeaderReadFailed.from(pos, err)
+		return &header, nil, HeaderReadFailed.from(pos, err).with(val)
 	}
 
 	return &header, b, nil
